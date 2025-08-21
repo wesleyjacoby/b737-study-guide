@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>B737 Study Guide</title>
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./app.css">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+        }
+    </script>
+</head>
+<body>
+    <header class="topbar">
+        <h1>B737-800 Study Guide</h1>
+        <div class="sp"></div>
+        <label class="btn">
+            Load Packs
+            <input id="manyInput" type="file" accept="application/json" multiple style="display:none">
+        </label>
+        <select id="datasetSelect" title="Loaded datasets"></select>
+    </header>
+
+    <main class="grid">
+        <!-- Left: Chapters -->
+        <section class="panel">
+            <h2>Chapters & Sections</h2>
+            <div class="panel-body">
+                <input id="search" class="search" placeholder="Search titles…" />
+                <ul id="tree" class="tree"></ul>
+            </div>
+        </section>
+
+        <!-- Middle: Reader -->
+        <section class="panel">
+            <h2>Reader</h2>
+            <div class="panel-body">
+                <div id="crumbs" class="crumbs"></div>
+                <h3 id="title" class="title-xl">Select a section…</h3>
+                <div id="content" class="md">—</div>
+                <div class="actions">
+                    <button id="btnCopy" class="btn">Copy Summary</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right: Flashcards + Audio -->
+        <section class="panel">
+            <h2>Flashcards & Audio</h2>
+            <div class="panel-body">
+                <div class="small">Build flashcards from this section (uses prebuilt <code>flashcards[]</code> if
+                    present).</div>
+                <div class="row gap">
+                    <button id="btnBuild" class="btn">Build from Summary</button>
+                    <button id="btnShuffle" class="btn">Shuffle</button>
+                    <button id="btnReset" class="btn">Reset</button>
+                </div>
+                <div class="card">
+                    <div id="cardText">Pick a section, then click “Build from Summary”.</div>
+                </div>
+                <div class="row gap">
+                    <button id="btnReveal" class="btn">Reveal</button>
+                    <button id="btnAgain" class="btn">Again</button>
+                    <button id="btnGood" class="btn">Good</button>
+                    <button id="btnEasy" class="btn">Easy</button>
+                    <span class="chip" id="countChip">0 / 0</span>
+                </div>
+                <div class="progress">
+                    <div id="bar"></div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="small">Audio narration</div>
+                <div class="row gap">
+                    <label class="btn">Attach audio
+                        <input id="audioInput" type="file" accept="audio/mpeg,audio/mp4,audio/aac,audio/mp3"
+                            style="display:none">
+                    </label>
+                    <button class="btn" id="btnRemoveAudio">Remove</button>
+                </div>
+                <audio id="player" controls preload="auto" style="width:100%"></audio>
+                <div class="small" id="audioMeta"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foot">
+        <span id="packMeta" class="muted"></span>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
