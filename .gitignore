@@ -1,0 +1,110 @@
+# ----------------------------
+# OS & file system cruft
+# ----------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ----------------------------
+# Editors / IDEs
+# ----------------------------
+# VS Code (uncomment lines below if you want to commit specific workspace files)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# JetBrains
+.idea/
+*.iml
+out/
+
+# Others
+*.swp
+*.swo
+*.code-workspace
+
+# ----------------------------
+# Logs & reports
+# ----------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+reports/
+coverage/
+.nyc_output/
+
+# ----------------------------
+# Node / tooling caches
+# (useful if you add a /tools compiler)
+# ----------------------------
+node_modules/
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.turbo/
+.pnp.*
+.pnpm-debug.log*
+
+# Framework build outputs (if you add a bundler later)
+dist/
+build/
+.out/
+.next/
+.nuxt/
+.svelte-kit/
+.angular/
+.tmp/
+.temp/
+
+# TypeScript (if added later)
+*.tsbuildinfo
+
+# ----------------------------
+# Environment & local config
+# ----------------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------------
+# Project-specific
+# ----------------------------
+# GitHub Pages works from root; nothing special needed here.
+
+# Packs/data:
+# Keep your canonical packs; ignore local scratch files if you like.
+data/*.local.json
+
+# Audio:
+# Commit only what you want shipped with the PWA. Attachments imported by users
+# will be stored in the browser (IndexedDB), not in git.
+# audio/*.large/*
+
+# Tools workspace (if you add a compiler under /tools)
+tools/.env
+tools/node_modules/
+tools/out/
+tools/.cache/
+tools/*.log
+tools/.DS_Store
+
+# ----------------------------
+# Misc
+# ----------------------------
+*.tmp
+*.temp
+*.orig
+*.bak
+~$*
