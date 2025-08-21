@@ -1,0 +1,309 @@
+{
+	"title": "Electrical",
+	"version": "2025-08-21",
+	"nodes": [
+		{
+			"id": "intro",
+			"title": "Introduction",
+			"children": [
+				{
+					"id": "intro-overview",
+					"title": "Overview",
+					"summary_full": "• **Architecture** — AC is primary (115V, 400 Hz, 3‑phase) from two engine IDGs; APU generator and external AC can power the airplane; DC is from TR units and batteries.\n• **No Paralleling** — AC sources **never** operate in parallel; the source last selected to a transfer bus **disconnects** the existing source.\n• **Three Divisions** — AC power system, DC power system, and the standby power system.\n• **Transfer Philosophy** — Each IDG powers its on‑side transfer bus in flight; automatic bus‑tie logic backs up the unpowered side when a source fails.\n• **Variants** — **Single‑battery** airplanes (1 Ni‑Cd, ≥30‑min standby) vs **Dual‑battery** airplanes (main + auxiliary, ≥60‑min standby).",
+					"flashcards": [
+						{
+							"q": "What are the two core rules for AC source selection on the 737‑800?",
+							"a": "No paralleling of AC sources; the newly selected source to a transfer bus automatically disconnects the existing source."
+						},
+						{
+							"q": "Name the three major divisions of the electrical system.",
+							"a": "AC power system, DC power system, standby power system."
+						},
+						{
+							"q": "In normal flight, which buses do the engine IDGs power?",
+							"a": "Each IDG powers its on‑side AC transfer bus; the opposite bus is backed up through automatic BTB logic if needed."
+						},
+						{
+							"q": "Single vs dual battery endurance (minimum)?",
+							"a": "Single: ≥30 minutes. Dual (main + aux): ≥60 minutes."
+						}
+					]
+				},
+				{
+					"id": "intro-variants",
+					"title": "Single vs Dual Battery (Fleet)",
+					"summary_full": "• **Single Battery** — One 24V Ni‑Cd; supplies battery, DC standby, hot battery, and switched hot battery busses when required; charger on AC Ground Service Bus 2.\n• **Dual Battery** — Main + auxiliary 24V Ni‑Cd; aux is **isolated** except when the standby system is on batteries, where it **parallels** the main; chargers on AC G/S Bus 1 (aux) and Bus 2 (main).\n• **Standby Endurance** — ≥30 min (single) vs ≥60 min (dual).\n• **Indications** — **BAT DISCHARGE** amber light when excessive discharge is detected.",
+					"flashcards": [
+						{
+							"q": "When does the auxiliary battery connect on dual‑battery airplanes?",
+							"a": "When the standby system is on batteries, the aux parallels the main; otherwise it remains isolated."
+						},
+						{
+							"q": "Which AC ground service bus powers the main vs auxiliary battery chargers?",
+							"a": "Main charger: AC Ground Service Bus 2. Auxiliary charger: AC Ground Service Bus 1."
+						},
+						{
+							"q": "What triggers the BAT DISCHARGE light?",
+							"a": "Excessive battery discharge."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "gen",
+			"title": "Electrical Power Generation",
+			"children": [
+				{
+					"id": "gen-idg",
+					"title": "Engine IDGs",
+					"summary_full": "• **Function** — Each engine has an **Integrated Drive Generator** maintaining constant generator speed across engine RPM.\n• **Disconnect** — Electro‑mechanical device allows complete mechanical isolation if required (high oil temperature auto‑disconnect or manual via DISCONNECT).\n• **Normal Supply** — Each IDG powers its own AC transfer bus; through BTBs it can supply the opposite side if the other source is lost.",
+					"flashcards": [
+						{
+							"q": "What maintains constant generator frequency despite engine RPM changes?",
+							"a": "The Integrated Drive (IDG) maintains constant speed to the generator."
+						},
+						{
+							"q": "How is an IDG disconnected and when can it be reconnected?",
+							"a": "Electro‑mechanical disconnect (auto on high oil temp or manual via DISCONNECT). Reconnection is maintenance action on the ground only."
+						}
+					]
+				},
+				{
+					"id": "gen-apu",
+					"title": "APU Generator",
+					"summary_full": "• **Capability** — Can power **both** AC transfer busses on the ground **or** in flight.\n• **Priority** — As with other sources, the last source selected to a bus takes it; if APU is the only source, it can meet all ground loads and **most** flight loads.",
+					"flashcards": [
+						{
+							"q": "Can the APU power both AC transfer busses in flight?",
+							"a": "Yes, it can power one or both busses in flight through the BTBs."
+						}
+					]
+				},
+				{
+					"id": "gen-external",
+					"title": "External Ground Power & Ground Service",
+					"summary_full": "• **External AC** — Nose‑gear‑side receptacle; when selected ON, external power connects to **both** transfer busses (cannot split one bus on EXT and the other on APU).\n• **Ground Service** — Momentary switch on forward attendant’s panel powers **AC Ground Service busses** (utility/cabin lights/charger) without energizing all airplane busses; overridden when both transfer busses are powered.",
+					"flashcards": [
+						{
+							"q": "Can you power one AC transfer bus with EXT PWR and the other with APU?",
+							"a": "No. When EXT or APU is selected to ON, it powers **both** transfer busses; sources are not paralleled."
+						},
+						{
+							"q": "What does the Ground Service switch do?",
+							"a": "Supplies ground service busses (utility outlets, cabin lights, battery charger) without powering all airplane busses; overridden when both transfer busses are powered."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "ac",
+			"title": "AC Power System",
+			"children": [
+				{
+					"id": "ac-structure",
+					"title": "Buses & Powering",
+					"summary_full": "• **Per Side** — One **AC Transfer Bus**, one **Main Bus**, two **Galley Busses**, and a **Ground Service Bus**.\n• **AC Standby** — **AC TRANSFER BUS 1** feeds the **AC Standby Bus** in normal ops.\n• **Automatic Transfer** — If one source/bus is lost, **BTBs** connect the opposite powered side to pick up the load (no AC paralleling).\n• **On Ground** — With both engine GCBs OFF or engines shut down, selecting **GRD PWR** ON or **APU GEN** ON powers **both** transfer busses; the last source selected wins."
+				},
+				{
+					"id": "ac-bus-tie",
+					"title": "Bus Tie System",
+					"summary_full": "• **AUTO** — With BUS TRANSFER in AUTO, loss of a source on one side causes the **other side** source to pick up the unpowered transfer bus via BTBs.\n• **One‑Generator Flight** — Remaining IDG can power **both** transfer busses via BTBs; APU may also back up one/both busses.",
+					"flashcards": [
+						{
+							"q": "What happens to the unpowered transfer bus with BUS TRANSFER in AUTO?",
+							"a": "The opposite side source picks it up via the bus tie breakers."
+						},
+						{
+							"q": "In one‑IDG operation, how are both transfer busses powered?",
+							"a": "Through the tie bus and BTBs by the remaining IDG (or APU if available)."
+						}
+					]
+				},
+				{
+					"id": "ac-fdap",
+					"title": "Flight Deck Auxiliary Power (PED Outlets)",
+					"summary_full": "• **Composition** — Converter + AC outlets on P6/P18 panels for PEDs (certain tails only).\n• **Safety Interlock** — Outlets require fully inserted prongs to defeat tamper protection; plugs inserted **before power‑up** must be reseated to energize."
+				},
+				{
+					"id": "ac-load-shed",
+					"title": "Automatic Load Shedding",
+					"summary_full": "• **Single‑Generator (IDG)** — Incremental shedding by sensed load. Typical order: **Galley 2 → Galley 1 → Main Bus 1 & 2** (or, on some fleets, **Galley+Main on Bus 2 → Galley+Main on Bus 1 → IFE**).\n• **Restoration** — When capacity returns (two sources), main and galley are restored automatically; **galley** may require manual OFF→ON depending on option.\n• **APU Only** — In flight, **galley** (and on some fleets **main**) are shed; if overload persists, **IFE** may shed. On ground, APU attempts full load then sheds galley and main as needed; manual restoration as per optioning.",
+					"flashcards": [
+						{
+							"q": "What is shed first during single‑generator operation?",
+							"a": "Galley loads (and on some fleets, galley + main on Bus 2)."
+						},
+						{
+							"q": "When are shed busses restored automatically?",
+							"a": "When two‑generator capacity returns; galley may require manual OFF→ON per option."
+						},
+						{
+							"q": "How does APU automatic load shedding differ in flight vs ground?",
+							"a": "In flight: sheds galley (and on some fleets main, then IFE if needed). On ground: attempts full load, then sheds galley and main until within limits."
+						}
+					]
+				}
+			],
+			"flashcards": [
+				{
+					"q": "State the fundamental AC selection rule when connecting sources to transfer busses.",
+					"a": "No paralleling of AC sources; the last‑selected source to a transfer bus disconnects the existing source."
+				},
+				{
+					"q": "With BUS TRANSFER in AUTO, what provides redundancy after loss of one IDG in flight?",
+					"a": "The remaining source powers both transfer busses via bus tie breakers."
+				},
+				{
+					"q": "Which bus feeds the AC Standby Bus in normal operation?",
+					"a": "AC Transfer Bus 1."
+				}
+			]
+		},
+		{
+			"id": "controls",
+			"title": "Electrical Power Controls & Monitoring",
+			"children": [
+				{
+					"id": "controls-drive",
+					"title": "Generator Drive (IDG) Indications",
+					"summary_full": "• **DRIVE (amber)** — Illuminates with **low IDG oil pressure** due to IDG failure, engine shutdown, automatic disconnect (high oil temp), or manual DISCONNECT.\n• **Re‑engagement** — After an IDG disconnect, reconnection is a **maintenance** action on the ground."
+				},
+				{
+					"id": "controls-meters-ac",
+					"title": "AC Volts/Amps/Frequency",
+					"summary_full": "• **Readouts** — AC volts/frequency selectable for STBY PWR, GRD PWR, GEN 1, APU GEN, GEN 2, static inverter. **Frequency** shown only when the generator is excited.\n• **AC Ammeter** — Displays current for both engine IDGs and the APU generator.\n• **TEST** — Maintenance selection via the test module for additional points."
+				},
+				{
+					"id": "controls-meters-dc",
+					"title": "DC Volts/Amps",
+					"summary_full": "• **Readouts** — **Battery** and each **TR (1/2/3)** V/A; standby power and battery bus show **voltage only**.\n• **ELEC Light (ground)** — Amber **ELEC** indicates a DC or standby system fault on the ground (inhibited in flight)."
+				}
+			]
+		},
+		{
+			"id": "dc",
+			"title": "DC Power System",
+			"children": [
+				{
+					"id": "dc-trs",
+					"title": "Transformer Rectifier Units",
+					"summary_full": "• **TRs** — Three units (**TR1/2/3**) convert 115VAC to 28VDC; powered from transfer busses (TR1 from AC TB1; TR2 from AC TB2; TR3 normally from AC TB2 with backup from TB1 in AUTO).\n• **Any Two Cover Load** — Any **two TRs** can carry the connected DC load.\n• **Normal Tie** — DC Bus 1, DC Bus 2, and DC Standby Bus are tied via **cross‑bus tie relay** so TR1 and TR2 jointly power them; TR3 powers the **battery bus** and backs up TR1/2.\n• **Auto Isolation** — Cross‑bus tie **opens automatically** at **glide slope capture** (for ILS) to isolate nav/flight control computers; also opens with **BUS TRANSFER = OFF**.\n• **TR UNIT (amber)** — In flight, illuminates if **TR1** fails **or** if **TR2 + TR3** fail; on the ground, **any** TR fault illuminates it.",
+					"flashcards": [
+						{
+							"q": "Which AC busses feed TR1, TR2, TR3 in AUTO?",
+							"a": "TR1 from AC Transfer Bus 1; TR2 from AC Transfer Bus 2; TR3 normally from AC Transfer Bus 2 with backup from Bus 1."
+						},
+						{
+							"q": "Why does the cross‑bus tie relay open at glide slope capture?",
+							"a": "To isolate the DC busses so a single failure cannot affect both nav receivers and flight control computers during the approach."
+						},
+						{
+							"q": "When does the TR UNIT light illuminate in flight vs on ground?",
+							"a": "In flight: TR1 failed, or TR2+TR3 failed. On ground: any TR fault."
+						}
+					]
+				},
+				{
+					"id": "dc-battery",
+					"title": "Battery Power",
+					"summary_full": "• **Supplied Busses on Batteries** — Battery bus, **DC Standby**, **Hot Battery**, **Switched Hot Battery** (switched hot is powered when the **BATTERY switch is ON**).\n• **Single vs Dual** — Single: ≥30 min standby; Dual: main + aux provide ≥60 min, with aux paralleling main during standby operation only.\n• **Voltage Range** — 22–30 VDC typical Ni‑Cd operating range."
+				},
+				{
+					"id": "dc-chargers",
+					"title": "Battery Charger TR Function",
+					"summary_full": "• **Purpose** — Restore/maintain full charge; after primary charge, chargers revert to **constant‑voltage TR** mode that powers **Hot** and **Switched Hot** Battery busses (and the **Battery Bus** if TR3 fails).\n• **Power Sources** — Single‑battery: charger from **AC G/S Bus 2**. Dual‑battery: main charger from **AC G/S Bus 2**, **aux** charger from **AC G/S Bus 1**.\n• **Standby Backup** — Loss of AC TB1 or source to DC Bus 1 → AC & DC standby busses are powered by the **battery/chargers**.",
+					"flashcards": [
+						{
+							"q": "After charging completes, how do the battery chargers operate?",
+							"a": "They revert to constant‑voltage TR mode and can power Hot and Switched Hot Battery busses; main charger can back the Battery Bus if TR3 fails."
+						},
+						{
+							"q": "Which ground service bus powers the auxiliary battery charger on dual‑battery airplanes?",
+							"a": "AC Ground Service Bus 1."
+						}
+					]
+				}
+			],
+			"flashcards": [
+				{
+					"q": "What DC busses are powered when on battery only?",
+					"a": "Battery Bus, DC Standby Bus, Hot Battery Bus, and Switched Hot Battery Bus (if Battery switch ON)."
+				},
+				{
+					"q": "List two conditions that open the DC cross‑bus tie relay.",
+					"a": "Glide slope capture during FD/AP ILS approach; BUS TRANSFER switch set to OFF."
+				},
+				{
+					"q": "What does the amber TR UNIT light signify in flight?",
+					"a": "TR1 failed, or TR2 and TR3 failed."
+				}
+			]
+		},
+		{
+			"id": "standby",
+			"title": "Standby Power System",
+			"children": [
+				{
+					"id": "standby-normal",
+					"title": "Normal Operation",
+					"summary_full": "• **Composition** — Static inverter, AC Standby Bus, DC Standby Bus, Battery Bus, Hot Battery Bus, Switched Hot Battery Bus, Main Battery (and **Aux Battery** on dual).\n• **AUTO + BAT ON** — Guarded **STANDBY POWER** switch in **AUTO** and **BATTERY** switch **ON** provide alternate sources for partial/total power loss, with automatic transfer to battery power if all AC is lost.\n• **Normal Feeds** — **AC Standby** from **AC TB1**; **DC Standby** from TR1/2/3; **Battery Bus** from TR3; **Hot/Switched Hot** from battery/chargers."
+				},
+				{
+					"id": "standby-alternate",
+					"title": "Alternate Operation (Loss of Normal Power)",
+					"summary_full": "• **AUTO Behavior** — Loss of AC TB1 or DC Bus 1 → automatic switching to standby sources; loss of all engine/APU AC → batteries/inverter power the standby system **in air or on ground**.\n• **BAT Position** — Forcing **BAT** puts **AC Standby (via inverter)**, **DC Standby**, and **Battery Bus** on battery power regardless; if **BATTERY switch is OFF**, Switched Hot Battery Bus is **unpowered**.\n• **OFF Position** — De‑energizes **AC Standby** and **DC Standby**; **STANDBY PWR OFF** light illuminates.",
+					"flashcards": [
+						{
+							"q": "With STANDBY POWER in AUTO and BAT ON, which bus normally feeds the AC Standby Bus?",
+							"a": "AC Transfer Bus 1."
+						},
+						{
+							"q": "What happens when STANDBY POWER is selected to BAT?",
+							"a": "AC Standby (via inverter), DC Standby, and Battery Bus are placed on battery power. If the Battery switch is OFF, Switched Hot Battery Bus is unpowered."
+						},
+						{
+							"q": "What indicates the standby buses are de‑energized?",
+							"a": "STANDBY PWR OFF light when the switch is OFF."
+						}
+					]
+				},
+				{
+					"id": "standby-inverter",
+					"title": "Static Inverter",
+					"summary_full": "• **Role** — Converts 24V DC (battery) to 115V AC to power the **AC Standby Bus** when normal AC is lost.\n• **Control** — Powered/controlled via the **STANDBY POWER** and **BATTERY** switches on the overhead."
+				}
+			],
+			"flashcards": [
+				{
+					"q": "What does the amber DRIVE light mean?",
+					"a": "Low IDG oil pressure due to failure, engine shutdown, auto disconnect (high oil temp), or manual disconnect."
+				},
+				{
+					"q": "How are shed loads restored after returning to two‑source operation?",
+					"a": "Automatic restoration of main/galley (and IFE on some fleets); galley may require manual OFF→ON depending on option."
+				}
+			]
+		},
+		{
+			"id": "all-gen-inop",
+			"title": "All Generators Inoperative (Battery‑Only)",
+			"summary_full": "• **Scope** — Lists vary by tail; in general, standby lighting, selected communications (interphones, PA, VHF1), essential flight instruments (Captain‑side PFD/ND or compact DU set depending on mod), clocks/EFIS panel, selected nav (VHF NAV1/ILS1/DME1/ADF1/GLS1 depending on mod), essential engine indications, fire protection, thrust reverser logic, fuel shutoff/crossfeed, gear lights/air‑ground system, selected warnings and stall warning are supported.\n• **Start/Restart Limits** — APU operation may be available; high‑altitude APU **starts** are generally **not recommended above ~25,000 ft**.\n• **Crew Technique** — Shed non‑essentials, monitor **BAT DISCHARGE**, minimize display usage as practicable, and follow QRH/AFM for endurance management and approach/landing configuration.",
+			"flashcards": [
+				{
+					"q": "Name three key flight deck capabilities that remain on battery‑only power.",
+					"a": "Standby/selected displays on Captain’s side, essential comms (interphones, PA, VHF1), and selected nav (e.g., VHF NAV1/ILS1/DME1) depending on modification status."
+				},
+				{
+					"q": "Is an APU start recommended at very high altitude on batteries only?",
+					"a": "Generally not above ~25,000 ft."
+				},
+				{
+					"q": "What are two pilot techniques to extend battery endurance?",
+					"a": "Reduce display usage and shed non‑essential loads; monitor BAT DISCHARGE and follow QRH."
+				}
+			]
+		}
+	]
+}

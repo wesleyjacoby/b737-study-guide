@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>B737 Study Guide</title>
-    <link rel="manifest" href="./manifest.webmanifest">
-    <link rel="stylesheet" href="./app.css">
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./app.css" />
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
@@ -46,12 +46,13 @@
             </div>
         </section>
 
-        <!-- Right: Flashcards + Audio -->
+        <!-- Right: Flashcards (+ Audio below) -->
         <section class="panel">
-            <h2>Flashcards & Audio</h2>
-            <div class="panel-body">
-                <div class="small">Build flashcards from this section (uses prebuilt <code>flashcards[]</code> if
-                    present).</div>
+            <h2>Flashcards</h2>
+            <div class="panel-body" id="flashPanel">
+                <div class="small">
+                    Build flashcards from this section (uses prebuilt <code>flashcards[]</code> if present).
+                </div>
                 <div class="row gap">
                     <button id="btnBuild" class="btn">Build from Summary</button>
                     <button id="btnShuffle" class="btn">Shuffle</button>
@@ -71,18 +72,13 @@
                     <div id="bar"></div>
                 </div>
 
-                <div class="divider"></div>
+                <!-- <div class="divider"></div> -->
 
-                <div class="small">Audio narration</div>
-                <div class="row gap">
-                    <label class="btn">Attach audio
-                        <input id="audioInput" type="file" accept="audio/mpeg,audio/mp4,audio/aac,audio/mp3"
-                            style="display:none">
-                    </label>
-                    <button class="btn" id="btnRemoveAudio">Remove</button>
+                <!-- Audio subsection (styled like panel headings) -->
+                <h2>Audio</h2>
+                <div id="audioWrap" hidden style="margin:10px 0 12px">
+                    <audio id="packAudio" controls preload="auto" style="width:100%;border-radius:12px;"></audio>
                 </div>
-                <audio id="player" controls preload="auto" style="width:100%"></audio>
-                <div class="small" id="audioMeta"></div>
             </div>
         </section>
     </main>

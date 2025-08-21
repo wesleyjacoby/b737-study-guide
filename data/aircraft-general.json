@@ -1,0 +1,283 @@
+{
+	"title": "Aircraft General",
+	"version": "2025-08-21",
+	"audio": "./audio/aircraft-general.m4a",
+	"nodes": [
+		{
+			"id": "intro",
+			"title": "Introduction",
+			"summary_full": "• This chapter collects airplane‑wide systems that support safe operations and evacuation: lighting (exterior, flight deck, passenger, emergency), oxygen (crew, passenger, portable), emergency equipment (extinguishers, PBE), and cabin signage.\n• Fleet differences exist (by registration blocks) for several items: exterior light implementations, passenger sign logic, photoluminescent path‑lighting charge times, and oxygen hardware. Always apply your tail‑number option notes.",
+			"flashcards": [
+				{
+					"q": "Name the four major groupings inside Aircraft General.",
+					"a": "Lighting systems, oxygen systems, emergency lighting/equipment, and passenger information/signs."
+				},
+				{
+					"q": "Why must fleet notes be checked for Aircraft General items?",
+					"a": "Because exterior lighting, passenger sign logic, photoluminescent path‑lighting charge times, and oxygen hardware vary by tail group."
+				}
+			]
+		},
+		{
+			"id": "lighting",
+			"title": "Lighting Systems",
+			"children": [
+				{
+					"id": "lighting-exterior",
+					"title": "Exterior Lighting",
+					"summary_full": "• Retractable landing lights: extend from lower fuselage; may be extended at any speed; aim forward along airplane waterline.\n• Fixed landing lights: wing leading‑edge; fixed aim forward/down.\n• Runway turnoff lights: in each wing root; illuminate area ahead of main gear.\n• Taxi light: on nose strut, aligned with nose wheel; some options auto‑extinguish when nose gear retracts.\n• LED strakelet package (option): wing strakelets host LED landing/taxi/turnoff functions; when both landing and taxi are ON/AUTO, landing overrides taxi.\n• Logo lights: on top of each horizontal stabilizer, illuminating the fin.\n• Position/navigation lights: red (L, forward base of winglet), green (R, forward base), white (aft base of winglets).\n• Strobes: high‑intensity white on both forward winglets and tail cone; anti‑collision beacons: red, top and bottom of fuselage.\n• Wing illumination: fuselage‑mounted flood for leading edge/ice check; wheel‑well lights on nose and main gear wells.",
+					"flashcards": [
+						{
+							"q": "Where are the retractable landing lights installed and are there speed limits for extension?",
+							"a": "Lower fuselage; extend parallel to waterline; may be extended at any speed."
+						},
+						{
+							"q": "What happens when both landing and taxi lights are ON/AUTO on LED strakelet‑equipped aircraft?",
+							"a": "The landing light function overrides the taxi light function."
+						},
+						{
+							"q": "Where are position lights located on the 737‑800 winglets?",
+							"a": "Red on left forward base, green on right forward base, and white on trailing base of both winglets."
+						},
+						{
+							"q": "Where are the red anti‑collision beacons?",
+							"a": "One on top and one on the bottom of the fuselage."
+						}
+					]
+				},
+				{
+					"id": "lighting-fd",
+					"title": "Flight Deck Lighting",
+					"summary_full": "• Area lighting via dome lights; background glare‑shield lighting for main instrument panels.\n• Integral lighting per instrument/panel; floodlights at MCP, electronic panel, and aft CB panel.\n• Loss of normal electrical power: standby electrical power automatically supplies the standby compass light, dome lights, instrument floods, and selected system/warning lights.",
+					"flashcards": [
+						{
+							"q": "Which flight deck lights are powered by standby electrical power when normal power is lost?",
+							"a": "Standby compass light, dome lights, instrument flood lights, and selected system/warning lights."
+						}
+					]
+				},
+				{
+					"id": "lighting-cabin",
+					"title": "Passenger Cabin Lighting & Signs",
+					"children": [
+						{
+							"id": "lighting-cabin-general",
+							"title": "Cabin Lighting",
+							"summary_full": "• General lighting: windows, ceiling, and entry lights; reading lights at each PSU; lighting in lavatories and galleys.\n• Cabin chimes: low tones sound when passenger signs change state."
+						},
+						{
+							"id": "lighting-signs",
+							"title": "Passenger Cabin Signs (Auto & Manual)",
+							"summary_full": "• FASTEN BELTS & RETURN TO SEAT (AUTO): illuminate when flaps or gear extended; extinguish when both retracted (fleet options apply).\n• NO SMOKING logic varies by fleet: some aircraft—signs always illuminated; others—“smoking not allowed” indication; some—illuminate with gear extended.\n• All passenger signs can be controlled manually by moving the respective switch to ON/OFF (with fleet‑specific exceptions). A low chime sounds when signs illuminate/extinguish.",
+							"flashcards": [
+								{
+									"q": "In AUTO, when do FASTEN BELTS and RETURN TO SEAT signs illuminate?",
+									"a": "When flaps or gear are extended; they extinguish when both are retracted."
+								},
+								{
+									"q": "Does NO SMOKING logic vary across the fleet?",
+									"a": "Yes—some tails are always illuminated, others display a prohibition symbol/text, and some illuminate with gear extended."
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "lighting-emergency",
+					"title": "Emergency Lighting (System & Locations)",
+					"children": [
+						{
+							"id": "lighting-emg-system",
+							"title": "System & Control",
+							"summary_full": "• Overhead guarded switch: OFF/ARMED/ON. Normally ARMED (lights out).\n• Automatic illumination if DC Bus 1 power fails or if AC power is turned off.\n• Aft Attendant Panel has an override ON switch (guards up) to illuminate emergency exit lights regardless of flight deck control.\n• Flight deck aft DOME light includes a separate emergency‑powered bulb for evacuation.",
+							"flashcards": [
+								{
+									"q": "In ARMED, when does the emergency exit lighting illuminate automatically?",
+									"a": "On loss of DC Bus 1 power or when AC power is turned off."
+								},
+								{
+									"q": "Where can cabin crew override emergency exit lighting?",
+									"a": "At the Aft Attendant Panel by lifting the guard and selecting ON."
+								}
+							]
+						},
+						{
+							"id": "lighting-emg-interior",
+							"title": "Interior Emergency Lighting",
+							"summary_full": "• Exit locator signs at forward, mid, and aft cabin; door/overwing exit lights; aisle/floor proximity guidance via photoluminescent strips or illuminated markers depending on option.\n• Purpose: provide route and exit identification when normal lighting is degraded or obscured.\n• Fleet options: some use self‑illuminating locator signs with floor proximity lights; others use photoluminescent strip systems that must be charged."
+						},
+						{
+							"id": "lighting-emg-photo",
+							"title": "Photoluminescent Path Lighting — Charging Guidance",
+							"summary_full": "• Photoluminescent strips require pre‑flight charging by ceiling/sidewall lights. Charge time vs glow duration depends on strip type (color/width) and scenario (first flight, quick‑turn, in‑flight top‑ups).\n• Typical patterns (non‑binding examples): 5–15 min charge yields ~4–10+ hours under standard systems; 30–45 min yields extended durations (10–16+ hours) for certain non‑blue systems.\n• Sky Interior variants: different charge/duration curves; continuous flight possible if ceiling/sidewall lights stay on. Some modes (Crossbin/COS/Direct) have lower duration unless charged on ‘High’.\n• Operational reminders: close bins where specified; limit aisle traffic during charging; passengers shadow the system—plan charging with minimal obstruction; quick‑turns require attention to charge windows; in‑flight top‑ups extend duration if started before prior discharge ends.",
+							"flashcards": [
+								{
+									"q": "Why does the cabin crew ‘charge’ photoluminescent path lighting?",
+									"a": "The strips must absorb light energy to glow during an emergency; charging ensures adequate duration."
+								},
+								{
+									"q": "Name two factors that change charge time vs duration for photoluminescent strips.",
+									"a": "Strip type (color/width/Sky Interior options) and the charging context (first flight vs quick‑turn vs in‑flight top‑ups)."
+								},
+								{
+									"q": "What cabin actions improve charging effectiveness before first flight?",
+									"a": "Close bin doors as specified, run ceiling/sidewall lights at the required intensity, and minimize aisle traffic that shadows the strips."
+								}
+							]
+						},
+						{
+							"id": "lighting-emg-exterior",
+							"title": "Exterior Emergency Lighting",
+							"summary_full": "• Slide illumination at entry/service doors; fuselage lights for overwing escape routes and ground contact area during evacuation."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "oxygen",
+			"title": "Oxygen Systems",
+			"children": [
+				{
+					"id": "oxygen-overview",
+					"title": "Overview",
+					"summary_full": "• Two independent systems: flight crew and passenger. Portable oxygen cylinders are also distributed throughout the cabin (typically forward and aft)."
+				},
+				{
+					"id": "oxygen-crew",
+					"title": "Flight Crew Oxygen",
+					"summary_full": "• Mask/regulator assemblies are quick‑donning. Cylinder supplies pressure shown on aft overhead indicator when BATTERY switch is ON.\n• Variants: diluter‑demand masks vs automatic pressure‑breathing models (pressure breathing above ~27,000 ft). System pressure up to ~1850 psi.\n• Regulation: in‑line pressure reducer supplies low‑pressure oxygen to the mask regulator.",
+					"flashcards": [
+						{
+							"q": "Where is crew oxygen pressure indicated?",
+							"a": "On the aft overhead panel; visible with the Battery switch ON."
+						},
+						{
+							"q": "When do some crew masks provide pressure breathing?",
+							"a": "Automatically above approximately 27,000 ft (option‑dependent)."
+						},
+						{
+							"q": "What is the typical maximum crew oxygen cylinder pressure?",
+							"a": "Up to about 1850 psi."
+						}
+					]
+				},
+				{
+					"id": "oxygen-crew-regulator",
+					"title": "Crew Mask Regulator Modes",
+					"summary_full": "• NORMAL: delivers a mix of ambient air and oxygen (diluter‑demand).\n• 100%: delivers pure oxygen on demand.\n• EMERGENCY: supplies 100% oxygen at slight positive pressure to prevent smoke/toxic gas ingress.",
+					"flashcards": [
+						{
+							"q": "What’s the purpose of the EMERGENCY setting on crew O2 regulators?",
+							"a": "Provide 100% oxygen at positive pressure to prevent smoke/fumes from entering the mask."
+						}
+					]
+				},
+				{
+					"id": "oxygen-crew-donning",
+					"title": "Crew Mask Donning / Stowage (Key Steps & Warnings)",
+					"summary_full": "• Donning (general): squeeze inflation levers, remove mask, place over head/face (chin first), release levers to secure; colored flow indicator momentarily shows.\n• Stowage cautions: **Do not press** inflation levers during stow—harness inflates and prevents proper stowage; ensure harness fully deflated; coil hose; check door flags and use RESET/TEST as required by model.\n• Flags & selectors: verify ‘OXY ON’ flag behavior per door lever; set regulator selectors to specified positions (e.g., NORMAL/100%) before closing doors; avoid pinching the hose.",
+					"flashcards": [
+						{
+							"q": "During stowing, why must you avoid pressing the red inflation levers?",
+							"a": "They inflate the harness, preventing correct stowage."
+						},
+						{
+							"q": "What indication is checked when re‑seating the mask in its box?",
+							"a": "‘OXY ON’ flag appearance/disappearance with the RESET/TEST lever per procedure."
+						}
+					]
+				},
+				{
+					"id": "oxygen-passenger",
+					"title": "Passenger Oxygen (PSU)",
+					"summary_full": "• Activation: automatic at ~14,000 ft cabin altitude or by PASS OXYGEN switch (aft overhead). PASS OXY ON light and MASTER CAUTION OVERHEAD illuminate when activated.\n• Mask drop: masks release from PSU compartments; pulling one mask deploys all masks in that PSU and starts flow.\n• Flow duration: typically ~12 minutes on some fleets; ~22 minutes on others (option‑dependent). Flow is constant and cannot be shut off once started. Green in‑line indicator shows flow.\n• Manual release: if a compartment does not open after activation, it can be dropped manually.\n• Safety notes: enforce NO SMOKING when oxygen is flowing; passenger oxygen mixes cabin air with oxygen and does not filter smoke.",
+					"flashcards": [
+						{
+							"q": "At what cabin altitude does passenger oxygen deploy automatically?",
+							"a": "Approximately 14,000 ft (or manually via the PASS OXYGEN switch)."
+						},
+						{
+							"q": "How long does passenger oxygen flow?",
+							"a": "About 12 or 22 minutes depending on the PSU type/tail option; flow is constant once started."
+						},
+						{
+							"q": "What indicates that oxygen is flowing to a PSU mask?",
+							"a": "A green in‑line flow indicator is visible in the transparent hose."
+						},
+						{
+							"q": "Why is NO SMOKING emphasized when PSU oxygen is flowing?",
+							"a": "Because oxygen flow is constant and increases fire risk; it does not prevent smoke inhalation."
+						}
+					]
+				},
+				{
+					"id": "oxygen-portable",
+					"title": "Passenger Portable Oxygen",
+					"summary_full": "• Portable cylinders for first‑aid/supplemental use are located around the cabin; each has a gauge, regulator, and on‑off valve.\n• Two outlet flows: ~2 LPM (walk‑around) and ~4 LPM (first aid). Cylinder capacities vary by fleet option—about 120 L or 311 L at ~1800 psi and 21°C.\n• Duration example: at 4 LPM on a 120 L bottle ≈ 30 minutes (capacity ÷ flow).",
+					"flashcards": [
+						{
+							"q": "What are the two typical outlet flow rates on portable O2 bottles?",
+							"a": "About 2 LPM (walk‑around) and 4 LPM (first aid)."
+						},
+						{
+							"q": "Compute duration: 120‑liter bottle at 4 LPM.",
+							"a": "≈30 minutes (120 ÷ 4)."
+						},
+						{
+							"q": "List three items found on a portable O2 bottle assembly.",
+							"a": "Pressure gauge, pressure regulator, on‑off valve (plus hoses/masks depending on kit)."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "emergency-eq",
+			"title": "Emergency Equipment & Fire Extinguishers",
+			"children": [
+				{
+					"id": "emerg-equip",
+					"title": "Emergency Equipment (Symbols & Locations)",
+					"summary_full": "• Cabin equipment includes: extinguishers (water, Halon), PBE/smoke hoods, crash axe, first‑aid and emergency medical kits, megaphones, life vests/rafts, flashlights, restraints, and more.\n• Exact locations vary by configuration (see illustrated cabin chart for your tail).",
+					"flashcards": [
+						{
+							"q": "Why must you consult the specific emergency equipment layout?",
+							"a": "Exact location/count varies by cabin configuration and tail number."
+						}
+					]
+				},
+				{
+					"id": "fire-water",
+					"title": "Water Extinguishers",
+					"summary_full": "• Water + antifreeze; cartridge‑pressurized on handle rotation; intended for Class A materials (wood, paper, fabric).\n• Not for electrical or grease fires.",
+					"flashcards": [
+						{
+							"q": "For which class of fires is the water extinguisher appropriate?",
+							"a": "Class A (combustibles like paper, wood, fabric)."
+						},
+						{
+							"q": "Why avoid using water on electrical or grease fires?",
+							"a": "Electrical shock risk and grease spread; use non‑conductive agents (e.g., Halon) instead."
+						}
+					]
+				},
+				{
+					"id": "fire-halon",
+					"title": "Halon (or Equivalent) Extinguishers",
+					"summary_full": "• Liquefied gas under pressure; effective on electrical, fuel, and grease fires (U.S. Class B/C; EU/AUS letters vary).\n• Warnings: heat by‑products and concentrated agent are toxic—on the flight deck, all crew must wear oxygen masks on 100% with EMERGENCY selected for discharge.\n• Agent dissipation may take up to several minutes after complete discharge; ensure smoke clears before removing masks/PBE.",
+					"flashcards": [
+						{
+							"q": "What are the PPE requirements when discharging Halon on the flight deck?",
+							"a": "All crew wear oxygen masks, 100% O2, EMERGENCY selected."
+						},
+						{
+							"q": "Why can Halon discharge remain hazardous after use?",
+							"a": "Concentrated agent and combustion by‑products are toxic; dissipation can take minutes."
+						}
+					]
+				}
+			]
+		}
+	]
+}

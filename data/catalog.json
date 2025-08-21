@@ -1,0 +1,16 @@
+{
+	"packs": [
+		{
+			"title": "Aircraft General",
+			"file": "./data/aircraft-general.json"
+		},
+		{
+			"title": "Anti-Ice & Rain",
+			"file": "./data/anti-ice.json"
+		},
+		{
+			"title": "Electrical",
+			"file": "./data/electrical.json"
+		}
+	]
+}

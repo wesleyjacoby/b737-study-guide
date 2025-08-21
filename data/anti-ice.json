@@ -1,0 +1,238 @@
+{
+	"title": "Anti-Ice & Rain",
+	"version": "2025-08-21",
+	"nodes": [
+		{
+			"id": "intro",
+			"title": "Introduction",
+			"summary_full": "• **Purpose** — Ice/rain protection is provided by thermal anti‑icing (bleed‑air TAI), electrical anti‑icing, and windshield wipers.\n• **Major Systems** — Flight Deck Window Heat; Windshield Wipers; Probe & Sensor Heat; Engine Anti‑Ice (cowl); Wing Anti‑Ice (inboard LE slats).\n• **Crew Effects** — Anti‑ice selections can change stall warning logic and minimum maneuver cues; FMC VREF is not auto‑adjusted by icing logic.\n• **Ground vs Flight** — Some systems use additional thrust/duct‑temperature logic on the ground that is **disabled in flight** (e.g., WAI valves).",
+			"flashcards": [
+				{
+					"q": "Why does the system deliberately regulate #1/#2 window temperatures to a specific level rather than simply 'hot'?",
+					"a": "To maintain structural strength and resist bird‑strike loads while preventing thermal damage; overheating risks delamination/crazing."
+				},
+				{
+					"q": "What crew action mitigates the risk of scratched windshields when precipitation stops during taxi?",
+					"a": "Move wipers to OFF on a dry windshield; rely on coatings/defog or a light spray if available before re‑engaging."
+				},
+				{
+					"q": "If operating on standby power, what are the practical implications for air data in icing?",
+					"a": "Reduced probe heating (often only captain’s pitot heated) increases risk of ice‑affected airspeed/alpha; cross‑check sources and consider icing procedures."
+				},
+				{
+					"q": "How does ENG ANTI‑ICE affect performance planning?",
+					"a": "Bleed demand reduces available thrust; anticipate longer takeoff/landing distance and consider impacts on climb/EGT margins."
+				},
+				{
+					"q": "What does an amber TAI on the CDS indicate in the context of EAI?",
+					"a": "A cowl valve/switch disagreement condition after a delay—confirm valve position and investigate system status."
+				},
+				{
+					"q": "Why does WAI trip OFF at liftoff yet icing logic persists in flight?",
+					"a": "Switch logic changes state with air/ground; flight envelope protection remains biased for icing to preserve stall margins."
+				},
+				{
+					"q": "When WAI is ON in flight, what must the crew remember about VREF?",
+					"a": "FMC‑displayed VREF is **not** automatically adjusted for icing; apply company procedures for approach speeds."
+				}
+			]
+		},
+		{
+			"id": "fdwh",
+			"title": "Flight Deck Window Heat",
+			"children": [
+				{
+					"id": "fdwh-design",
+					"title": "Design & Heated Panes (fleet variants)",
+					"summary_full": "• **Construction** — Forward (#1, #2) windows are laminated glass around a vinyl core; side windows vary by tail (some with extra acrylic/vinyl layers).\n• **Heated Coatings** — Conductive coating allows electrical heating. Typically **#1 and #2** are heated to prevent ice/fog; some tails additionally heat **#3/4/5** panes.\n• **Fleet Differences** — Which switch heats which pane and which panes have coatings varies by registration block; consult applicable variant notes for your fleet.\n• **Unheated Pane** — On some aircraft, window **#3** is not electrically heated; others do heat #3 (and sometimes #4/5)."
+				},
+				{
+					"id": "fdwh-op",
+					"title": "Operation & Protection",
+					"summary_full": "• **Controls** — **FWD WINDOW HEAT** switches supply heat to window **#1**; **SIDE WINDOW HEAT** switches supply heat to **#2** (and, on some tails, also #3/4/5).\n• **Temperature Control** — Controllers regulate #1/#2 temperature to maintain pane strength (bird‑strike). Some side panes (#3/4/5) use **thermal switches** to cycle heat.\n• **Overheat Protection** — **Automatic power removal** to #1/#2 upon overheat; thermal switches open on affected side panes to stop heating until cool‑down.\n• **Indications** — Overheat lights per panel/schematic; PWR TEST per AFM/FCOM. Normal ops show steady ON with no overheat annunciations.",
+					"flashcards": [
+						{
+							"q": "Which windows are powered by the FWD vs SIDE WINDOW HEAT switches (typical fleet)?",
+							"a": "FWD → #1. SIDE → #2 (and on some tails also #3/4/5)."
+						},
+						{
+							"q": "What maintains temperature for windows #1/#2 and for some side panes?",
+							"a": "Controllers maintain #1/#2; thermal switches cycle heat for some #3/4/5 panes."
+						},
+						{
+							"q": "What happens on an overheat of window heat #1/#2?",
+							"a": "Power is automatically removed to the affected window(s); overheat annunciation shown."
+						},
+						{
+							"q": "Primary design reason for controlling #1/#2 pane temperature?",
+							"a": "Maintain structural strength for potential bird‑strike loads while preventing ice/fog."
+						},
+						{
+							"q": "Are all #3 windows heated across the fleet?",
+							"a": "No. Some tails do not heat #3; others do (and may heat #4/#5). Always check tail‑specific notes."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "wipers",
+			"title": "Windshield Wipers",
+			"summary_full": "• **Function** — Rain removal for forward windows using wipers and a permanent rain‑repellent coating.\n• **Caution** — Do **not** operate wipers on a dry windshield—scratching can occur.\n• **Use** — Employ wipers for heavy precipitation and when coatings are insufficient at low speeds.",
+			"flashcards": [
+				{
+					"q": "What protects the forward windows from rain besides the wipers?",
+					"a": "A permanent rain‑repellent coating on the windows."
+				},
+				{
+					"q": "Why avoid operating wipers on a dry windshield?",
+					"a": "It can scratch the windshield."
+				},
+				{
+					"q": "When are wipers most useful?",
+					"a": "Low speeds/heavy precipitation where airflow/rain‑repellent coating is insufficient."
+				}
+			]
+		},
+		{
+			"id": "probe",
+			"title": "Probe & Sensor Heat",
+			"summary_full": "• **Heated Items** — **Pitot probes**, **TAT** probe, and **alpha vanes** are electrically heated; **static ports are not**.\n• **Standby Power Behavior** — On some variants, with **standby power**, only the **captain’s pitot** is heated; the **CAPT PITOT** light may **not** illuminate for a failure.\n• **Standby Airspeed** — The standby airspeed system’s pitot probe is **not heated** when on standby power.\n• **Crew Consideration** — In abnormal electrical conditions, recognize degraded probe‑heat coverage and associated airspeed/icing risks.",
+			"flashcards": [
+				{
+					"q": "Which external sensors are electrically heated?",
+					"a": "Pitot probes, TAT probe, and alpha vanes."
+				},
+				{
+					"q": "Are static ports heated?",
+					"a": "No."
+				},
+				{
+					"q": "On standby power, which pitot is typically heated?",
+					"a": "Only the captain’s pitot probe on some variants."
+				},
+				{
+					"q": "Does the CAPT PITOT light always illuminate for a failure on standby power?",
+					"a": "No—on some aircraft it does not illuminate."
+				},
+				{
+					"q": "Is the standby airspeed pitot heated on standby power?",
+					"a": "No. Not heated when the airplane is on standby power."
+				},
+				{
+					"q": "Operational risk when probe heat coverage is reduced?",
+					"a": "Unreliable airspeed/alpha inputs in icing; treat as icing and follow appropriate procedures."
+				}
+			]
+		},
+		{
+			"id": "eai",
+			"title": "Engine Anti‑Ice (Cowl)",
+			"children": [
+				{
+					"id": "eai-sys",
+					"title": "System",
+					"summary_full": "• **Anti‑Ice Medium** — Engine **bleed air** provides thermal anti‑icing to the **engine cowl lip**.\n• **Control** — Individual **ENG ANTI‑ICE** switches (each side). System may be used **on the ground and in flight**.\n• **Valves** — Cowl anti‑ice valves are **electrically controlled** and **pressure‑actuated**."
+				},
+				{
+					"id": "eai-op",
+					"title": "Operation & Indications",
+					"summary_full": "• **Selecting ON** — Routes bleed air to the cowl lip and **sets stall‑warning logic for icing** (affects stick shaker/min maneuver bars). **FMC VREF is not auto‑adjusted.**\n• **Reverting Logic** — When **ENG ANTI‑ICE OFF**, stall‑warning/mini‑man logic returns to normal **if WING anti‑ice was not used in flight**.\n• **Disagreement** — If cowl valve position disagrees with switch: **COWL VALVE OPEN light** stays bright; **amber TAI** indication appears on the CDS after a short delay.\n• **Over‑press** — **Amber COWL ANTI‑ICE** light indicates excessive pressure in the cowl anti‑ice duct.\n• **Crew Technique** — Confirm valve/TAI indications after selection; anticipate performance penalties and adjust thrust/monitor EGT margins in icing.",
+					"flashcards": [
+						{
+							"q": "What does selecting ENG ANTI‑ICE ON do?",
+							"a": "Sends bleed air to the cowl lip for TAI and sets stall‑warning logic for icing."
+						},
+						{
+							"q": "Does FMC VREF change automatically with ENG ANTI‑ICE ON?",
+							"a": "No. VREF is not automatically adjusted."
+						},
+						{
+							"q": "Valve design for cowl anti‑ice?",
+							"a": "Electrically controlled, pressure‑actuated."
+						},
+						{
+							"q": "What indicates a cowl valve disagreement with the switch?",
+							"a": "COWL VALVE OPEN light remains bright and an amber TAI shows on the CDS after a delay."
+						},
+						{
+							"q": "What does the amber COWL ANTI‑ICE light mean?",
+							"a": "Excessive pressure in the duct from the valve to the cowl lip."
+						},
+						{
+							"q": "When does stall‑warning logic revert to normal after EAI OFF?",
+							"a": "When EAI is OFF and **wing anti‑ice has not been used in flight**."
+						},
+						{
+							"q": "Is ENG ANTI‑ICE allowed on the ground?",
+							"a": "Yes—may be used on ground and in flight."
+						},
+						{
+							"q": "Pilot effect on cues when EAI is ON?",
+							"a": "Stick shaker and minimum maneuver speed bars are adjusted for icing conditions."
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "wai",
+			"title": "Wing Anti‑Ice (Inboard Slats)",
+			"children": [
+				{
+					"id": "wai-sys",
+					"title": "System",
+					"summary_full": "• **Coverage** — Provides bleed‑air anti‑ice to the **three inboard leading‑edge slats** only; **not** to LE flaps or outboard slats.\n• **Valves** — Two **AC motor‑operated** control valves route air to the slats; air exhausts overboard after heating.\n• **Slat Position** — Effective with **slats in any position**."
+				},
+				{
+					"id": "wai-ground",
+					"title": "Operation — Ground",
+					"summary_full": "• **Switch ON** — Opens **both** WAI valves **if** thrust on **both engines** is **below** the takeoff‑warning threshold **and** both duct temps are **below** thermal‑switch trip.\n• **Auto Close** — Either **high thrust** or **duct over‑temperature** closes **both valves**.\n• **Auto Reopen** — Valves **reopen** when thrust is reduced **and** both ducts cool.\n• **Switch Latching** — On the ground, the **WING ANTI‑ICE switch remains in ON** regardless of valve state.\n• **Lift‑Off Behavior** — With air/ground in ground mode and switch ON, the **switch trips OFF automatically at lift‑off**."
+				},
+				{
+					"id": "wai-flight",
+					"title": "Operation — Flight",
+					"summary_full": "• **Switch ON** — Opens **both** control valves and **sets stall‑warning logic for icing** (affects stick shaker/min maneuver bars).\n• **Disabled Logic** — In flight, **duct‑temperature and thrust‑setting logic are disabled**—they have no effect on valve operation.\n• **Persistent Icing Logic** — **Stall‑warning logic remains set for icing for the remainder of the flight**, regardless of subsequent WAI switch changes.\n• **Indications** — **Blue VALVE OPEN** lights monitor valve position; confirm symmetry after selection.",
+					"flashcards": [
+						{
+							"q": "Which wing surfaces are protected by WAI?",
+							"a": "The three inboard leading‑edge slats only."
+						},
+						{
+							"q": "What drives WAI valves?",
+							"a": "AC motor‑operated control valves."
+						},
+						{
+							"q": "WAI ground logic for opening valves?",
+							"a": "Both engines’ thrust below the takeoff‑warning setting and both duct temps below thermal switch trip."
+						},
+						{
+							"q": "Two conditions that close WAI valves on the ground?",
+							"a": "High thrust on either engine or duct over‑temperature on either side."
+						},
+						{
+							"q": "What happens to the WAI switch at lift‑off?",
+							"a": "It automatically trips OFF when air/ground changes to air mode."
+						},
+						{
+							"q": "In flight, is duct‑temp/thrust logic active for WAI?",
+							"a": "No—disabled in flight."
+						},
+						{
+							"q": "Duration of icing stall‑warning logic after WAI used in flight?",
+							"a": "Remains set for the rest of the flight regardless of later switch changes."
+						},
+						{
+							"q": "How do you monitor WAI valve position?",
+							"a": "Blue VALVE OPEN lights."
+						},
+						{
+							"q": "Is WAI effective with slats extended or retracted?",
+							"a": "Effective in any slat position."
+						}
+					]
+				}
+			]
+		}
+	]
+}

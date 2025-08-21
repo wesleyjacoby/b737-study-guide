@@ -1,4 +1,4 @@
-const VERSION = "b737-guide-v1";
+const VERSION = "b737-guide-v1.3"; // bump this when you change cache list
 const APP_SHELL = [
 	"./",
 	"./index.html",
@@ -7,6 +7,11 @@ const APP_SHELL = [
 	"./manifest.webmanifest",
 	"./icons/icon-192.png",
 	"./icons/icon-512.png",
+	// Catalog + packs (optional pre-cache)
+	"./data/catalog.json",
+	"./data/aircraft-general.json",
+	"./data/anti-ice.json",
+	"./data/electrical.json",
 ];
 
 self.addEventListener("install", (e) => {
